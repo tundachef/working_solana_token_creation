@@ -1,0 +1,22 @@
+{
+  "name": "TRUMPPUTIN",
+  "symbol": "TPUTIN",
+  "image": "https://algobot.cloud/image.png",
+  "description": "TrumpPutin Meme Coin on solana\n website: https://tputin.online/\n twitter: https://twitter.com/tputincoin\n telegram: https://t.me/trumpputincoin",
+  "extensions": {
+    "website": "https://tputin.online/",
+    "twitter": "https://twitter.com/tputincoin",
+    "telegram": "https://t.me/trumpputincoin"
+  },
+  "tags": [
+    "SOLANA",
+    "MEME",
+    "PUTIN",
+    "TRUMP",
+    "TRUMPPUTIN"
+  ],
+  "creator": {
+    "name": "PUTIN",
+    "site": "https://tputin.online"
+  }
+}

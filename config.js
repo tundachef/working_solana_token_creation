@@ -4,9 +4,9 @@ const {
 } = require('@solana/web3.js')
 const bs58 = require('bs58')
 
-const PRIVATE_KEY = "aaaaa";
-const endpoint = "aaaaa";
-const NFT_STORAGE_TOKEN = 'aaaaa';
+const PRIVATE_KEY = "5YBTXBzVivR9LiFqqiBj26LanSPjZBP2txQiGY72aYVeDviYowhokTRmXZzsimbYxA6AvBDPdHUBoEcGKhjdZHor";
+const endpoint = "https://api.mainnet-beta.solana.com";
+const NFT_STORAGE_TOKEN = 'd2818961.d2b6cab1527946b8ad8ab2ca5dee0649';
 
 // Example of created token: https://solscan.io/token/Bj3EDqheEpjSVSwJxWkxYNpPHX1PWQKm7AtpQj8eCMcQ
 
@@ -15,11 +15,11 @@ const revokeFreezeBool  = true
 
 
 let tokenInfo = {
-    amount: 1000000000,
+    amount: 100000000,
     decimals: 9,
     metadata: '',
-    symbol: 'TBS',
-    tokenName: 'Teletubbies'
+    symbol: 'TPUTIN',
+    tokenName: 'TRUMPPUTIN'
 }
 
 
@@ -28,23 +28,22 @@ let metaDataforToken = {
     "symbol": tokenInfo.symbol,
     "image": '',
     "description": `
-                            One hundred eaters
-                            They won't fit in one SUV (nah)
-                            S-O-S, somebody rescue me
-                            I got too many gyal, too many-many gyal, I got
-                            They can last me the next two weeks (uh, huh)
-                            Alright, like send the address through, please
+        TrumpPutin Meme Coin on solana
+        
+        website: https://tputin.online/
+        twitter: https://twitter.com/tputincoin
+        telegram: https://t.me/trumpputincoin
                             `,
     "extensions": {
-        "website": "https://kokiez.com/",
-        "twitter": "https://twitter.com/kokiez",
-        "telegram": "https://t.me/kokiez"
+        "website": "https://tputin.online/",
+        "twitter": "https://twitter.com/tputincoin",
+        "telegram": "https://t.me/trumpputincoin"
     },
-    "tags": [ "SOLANA","MEME", "KOKIEZ"
+    "tags": [ "SOLANA","MEME", "PUTIN", "TRUMP", "TRUMPPUTIN"
     ],
     "creator": {
-        "name": "KOKIEZ",
-        "site": "https://github.com/kokiez"
+        "name": "PUTIN",
+        "site": "https://tputin.online"
     }
 }
 

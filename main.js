@@ -2,6 +2,7 @@ const fs = require('fs');
 const {createToken} = require('./src/create_token.js')
 const { NFTStorage, Blob,File} = require ('nft.storage')
 
+
 const {
     NFT_STORAGE_TOKEN,
     revokeMintBool,
@@ -21,7 +22,7 @@ async function main() {
         console.log("Metadata failed")
         return;
     }
-    tokenInfo.metadata = metadata_url
+    tokenInfo.metadata = ""
 
     // Create token
     console.log("Creating Token...")
@@ -35,38 +36,24 @@ async function main() {
 
 
 async function uploadMetaData() {
-    const endpoint = 'https://api.nft.storage' 
-    const storage = new NFTStorage({ endpoint, token: NFT_STORAGE_TOKEN })
-
-    // Store image
-    const data = await fs.promises.readFile('./image.png')
-    const cid1 = await storage.storeBlob(new Blob([data]))
-    const imageUrl = `https://${cid1}.ipfs.nftstorage.link`
-    const status1 = await storage.status(cid1)
-    if (status1.pin.status != 'pinned'){
-        console.log("Could not upload image, Status: ",status1.pin.status)
-        return;
-    }
-    console.log('Image Upload status: ',status1.pin.status)
-    
-    console.log("Image url: ",imageUrl)
+    // console.log('cow')
+    const imageUrl = `https://algobot.cloud/image.png`
     metaDataforToken.image = imageUrl
 
 
-    // store as a json file
-    const jsonString = JSON.stringify(metaDataforToken, null, 2);
-    const file = new File([jsonString], "metadata.json", {type: "application/json"});
+    // // store as a json file
+    // run this to generate metadata.json
+    // const jsonString = JSON.stringify(metaDataforToken, null, 2);
+    // const file = new File([jsonString], "metadata.json", {type: "application/json"});
+    // try {
+    //     const filePath = './metadata.json';
+    //     fs.writeFileSync(filePath, jsonString);
+    //     console.log('File saved successfully:', filePath);
+    // } catch (error) {
+    //     console.error('Error saving file:', error);
+    // }
 
-    const cid = await storage.storeBlob(file)
-    const status = await storage.status(cid)
-
-    if (status1.pin.status != 'pinned'){
-        console.log("Could not upload Metadata, Status: ",status1.pin.status)
-        return;
-    }
-
-    console.log('MetaData Upload status: ',status.pin.status)
-    const metadata_url = `https://${cid}.ipfs.nftstorage.link`
+    const metadata_url = `https://algobot.cloud/metadata.json`
     console.log('Metadata URI: ', metadata_url)
 
     
@@ -74,4 +61,21 @@ async function uploadMetaData() {
 
   }
 
-main()
+  main()
+
+
+// Result
+// For just 3 usd of Solana
+// Token mint authority revoked
+// Token freeze authority revoked
+// token created
+
+// Token Created :  {
+//     amount: 100000000,
+//     decimals: 9,
+//     metadata: '',
+//     symbol: 'TPUTIN',
+//     tokenName: 'TRUMPPUTIN'
+//   }
+//   Token Mint Address : 987fG1KMZf86yPpcRwjKGTFfhyCMRU14aG5wLkmLTFq8
+//   Mint Link: https://solscan.io/token/987fG1KMZf86yPpcRwjKGTFfhyCMRU14aG5wLkmLTFq8

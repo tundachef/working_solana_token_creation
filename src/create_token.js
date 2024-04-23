@@ -63,8 +63,11 @@ async function createToken(tokenInfo, revokeMintBool, revokeFreezeBool) {
       },
     }
   );
+  
+  let blockhash = await connection.getLatestBlockhash("finalized");
+  console.log("blockhash", blockhash);
 
-  const createNewTokenTransaction = new Transaction().add(
+  const createNewTokenTransaction = new Transaction(blockhash).add(
     SystemProgram.createAccount({
       fromPubkey: myPublicKey,
       newAccountPubkey: mintKeypair.publicKey,
@@ -93,6 +96,7 @@ async function createToken(tokenInfo, revokeMintBool, revokeFreezeBool) {
     ),
     createMetadataInstruction
   );
+  console.log("Previous Error: resolved")
   createNewTokenTransaction.feePayer = myKeyPair.publicKey;
 
   if (revokeMintBool) {
@@ -117,9 +121,7 @@ async function createToken(tokenInfo, revokeMintBool, revokeFreezeBool) {
   }
   
 
-  let blockhash = (await connection.getLatestBlockhash("finalized")).blockhash;
-  console.log("blockhash", blockhash);
-  createNewTokenTransaction.recentBlockhash = blockhash;
+  // createNewTokenTransaction.recentBlockhash = blockhash;
 
   const signature = await sendAndConfirmTransaction(
     connection,
