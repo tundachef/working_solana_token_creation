@@ -22,7 +22,7 @@ async function main() {
         console.log("Metadata failed")
         return;
     }
-    tokenInfo.metadata = ""
+    tokenInfo.metadata = metadata_url
 
     // Create token
     console.log("Creating Token...")
@@ -65,17 +65,26 @@ async function uploadMetaData() {
 
 
 // Result
-// For just 3 usd of Solana
+// For just 3.9 usd of Solana
 // Token mint authority revoked
 // Token freeze authority revoked
 // token created
 
+
+// Metadata URI:  https://algobot.cloud/metadata.json
+// Creating Token...
+// blockhash {
+//   blockhash: 'D3LQsQJpqARLK8Y6gEfuG2QXrmqciFk6CdEvYqvGSwES',
+//   lastValidBlockHeight: 241881476
+// }
+// Previous Error: resolved
+// Token mint transaction sent. Signature: 3QWkxVQjRzeEZCkZWrmyQgkJQqFNdFK1EGyEwrV466YRcg2SJDtWLbVCsogschayq4xeLGnEt1yGf3ad5HieRMLu        
 // Token Created :  {
-//     amount: 100000000,
-//     decimals: 9,
-//     metadata: '',
-//     symbol: 'TPUTIN',
-//     tokenName: 'TRUMPPUTIN'
-//   }
-//   Token Mint Address : 987fG1KMZf86yPpcRwjKGTFfhyCMRU14aG5wLkmLTFq8
-//   Mint Link: https://solscan.io/token/987fG1KMZf86yPpcRwjKGTFfhyCMRU14aG5wLkmLTFq8
+//   amount: 100000000,
+//   decimals: 9,
+//   metadata: 'https://algobot.cloud/metadata.json',
+//   symbol: 'TPUTIN',
+//   tokenName: 'TRUMPPUTIN'
+// }
+// Token Mint Address : E64QSHxgEcir1cmoYgqwrqmSJj6AMjo13kHSn8PLEotP
+// Mint Link: https://solscan.io/token/E64QSHxgEcir1cmoYgqwrqmSJj6AMjo13kHSn8PLEotP
