@@ -4,7 +4,7 @@ const {
 } = require('@solana/web3.js')
 const bs58 = require('bs58')
 
-const PRIVATE_KEY = "5YBTXBzVivR9LiFqqiBj26LanSPjZBP2txQiGY72aYVeDviYowhokTRmXZzsimbYxA6AvBDPdHUBoEcGKhjdZHor";
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const endpoint = "https://api.mainnet-beta.solana.com";
 const NFT_STORAGE_TOKEN = 'd2818961.d2b6cab1527946b8ad8ab2ca5dee0649';
 
